@@ -1,0 +1,75 @@
+*{
+    color: white;
+}
+.navbar {
+    display: flex;
+    align-items: center;
+    padding-top: 15px;
+}
+.logo img {
+    margin-left: 25px;
+    width: 80px;
+    height: 30px;
+}
+.navbar-right {
+    display: flex;
+    align-items: center;
+}
+.navbar-right svg {
+    margin: 0 40px;                 
+    cursor: pointer;                
+}
+.navbar-right img {
+    height: 37px;                    
+    border-radius: 75%;   
+    margin-right: 25px;  
+    margin-left: 50px;                        
+}
+.navbar-left {
+    padding-left: 192px;
+}
+.navbar-left ul {
+    display: flex;
+    gap: 90px;
+    list-style: none;
+}
+.navbar-left, .navbar-right {
+    justify-content: flex-end; 
+    margin-left: auto;
+}
+.items {
+    padding-left: 90px;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+.items button {
+    background: none;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 0;
+}
+.items .list1 {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: red;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    list-style: none;
+    margin: 0;
+}
+.items .list1 li {
+    padding: 5px 10px;
+    cursor: pointer;
+}
+.list1{
+    margin-left: 90px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
