@@ -1,49 +1,70 @@
-*{
+* {
     color: white;
+    font-weight: bold;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
+
 .navbar {
     display: flex;
     align-items: center;
     padding-top: 15px;
+    position: absolute; /* Position navbar on top of the background */
+    top: 0;
+    width: 100%;
+    z-index: 1; /* Ensures navbar appears above other content */
+    background: rgba(0, 0, 0, 0.4); /* Optional: Add subtle overlay for readability */
+    border-bottom: 2px solid rgba(255, 255, 255, 0.15); /* Adds a white border around the navbar */
+    padding: 15px; /* Adjust padding for space around content and border */
 }
+
 .logo img {
     margin-left: 25px;
     width: 80px;
     height: 30px;
 }
+
 .navbar-right {
     display: flex;
     align-items: center;
 }
+
 .navbar-right svg {
-    margin: 0 40px;                 
-    cursor: pointer;                
+    margin: 0 40px;
+    cursor: pointer;
 }
+
 .navbar-right img {
-    height: 37px;                    
-    border-radius: 75%;   
-    margin-right: 25px;  
-    margin-left: 50px;                        
+    height: 37px;
+    border-radius: 75%;
+    margin-right: 25px;
+    margin-left: 50px;
 }
+
 .navbar-left {
     padding-left: 192px;
 }
+
 .navbar-left ul {
     display: flex;
     gap: 90px;
     list-style: none;
+    cursor: pointer;
 }
+
 .navbar-left, .navbar-right {
-    justify-content: flex-end; 
+    justify-content: flex-end;
     margin-left: auto;
 }
+
 .items {
     padding-left: 90px;
     position: relative;
     display: flex;
     align-items: center;
 }
-.items button {
+
+.items .button1 {
+    position: relative;                  /* Ensure ::after positioning is correct */
     background: none;
     border: none;
     font-size: 16px;
@@ -52,24 +73,82 @@
     align-items: center;
     gap: 5px;
     padding: 0;
+    margin-bottom: 5px;
 }
+
+.items .button1::after {
+    content: '';
+    display: block;
+    width: 8px;                          /* Start small */
+    height: 2px;                         /* Same as other elements */
+    background: red;
+    position: absolute;                  /* Positioning for bottom alignment */
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: width 0.3s ease;
+}
+
+.items .button1:hover::after {
+    width: 100%;                         /* Expand to full width on hover */
+}
+
 .items .list1 {
     position: absolute;
     top: 100%;
     left: 0;
-    background: red;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background: transparent;
     padding: 10px;
+    margin-left: 85px;
     list-style: none;
-    margin: 0;
-}
+    margin-top: 5px;
+    text-align: center;
+} 
 .items .list1 li {
     padding: 5px 10px;
     cursor: pointer;
 }
-.list1{
+
+.list1 {
     margin-left: 90px;
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.navbar-left ul li::after {
+    content: '';
+    display: block;
+    width: 8px;                          /* Start small */
+    height: 2px;
+    background: red;
+    transition: width 0.3s ease;
+    left: 50%;
+    bottom: -5px;
+    transform: translateX(-50%);
+    cursor: pointer;
+    margin-top: 3px;
+    position: relative;                  /* Positioning added */
+}
+
+.navbar-left ul li:hover::after {
+    width: 100%;                         /* Expand to full width on hover */
+}
+.items .list1 li::after{
+content: '';
+display: block;
+left: 50%;
+width: 5px;                          /* Start small */
+height: 2px;
+background: transparent;
+bottom: -2px;
+transform: translateX(-50%);
+cursor: pointer;
+position: relative;                  /* Positioning added */
+}
+.items .list1 li:hover::after{
+    width:50px;
+    background:white;
+    transition: width 0.2s ease;
+
 }

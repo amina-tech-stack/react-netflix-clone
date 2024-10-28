@@ -6,7 +6,7 @@ import profileImage from '../../assets/profile_img.png';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const items = ['movies', 'series'];
+  const items = ['Movies', 'Series'];
 
   const toggleList = () => {
     setIsOpen(!isOpen);
@@ -25,14 +25,14 @@ const Navbar = () => {
           </ul>
           </div>
           <div className='items'>
-          <button onClick={toggleList}>
+          <button className="button1"onClick={toggleList}>
             {isOpen ? '˅' : '>'} {/* Toggle symbol */}
             Myliste
           </button>
             {isOpen && (
               <ul className='list1'>
                 {items.map((item, index) => (
-                  <li key={index}>{item}</li>
+                  <li className='list11' key={index}>{item}</li>
                 ))}
               </ul>
             )}
